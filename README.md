@@ -80,18 +80,20 @@ Get-FullDiskInfo verbose | Where-Object VolLetter -eq "C:").MediaType
 
 DiskModel<br/>
 MediaType<br/>
+DiskStyle<br/>
+PartitionStyle<br/>
 DiskandPartitionNumber<br/>
-VolumeLetter<br/>
-VolumeName<br/>
-FileSystem<br/>
-Compressed<br/>
-HealthStatus<br/>
-OperationalStatus<br/>
-TotalDiskSize<br/>
-UsedSpace<br/>
-UsedSpacePercentage<br/>
-FreeSpace<br/>
-FreeSpacePercentage<br/>
+VolLetter<br/>
+VolName<br/>
+VolFileSystem<br/>
+VolCompression<br/>
+VolHealthStatus<br/>
+VolOperationalStatus<br/>
+TotalVolSize<br/>
+UsedVolSpace<br/>
+UsedVolSpacePercentage<br/>
+FreeVolSpace<br/>
+FreeVolSpacePercentage<br/>
 WindowsDirectoryVol<br/>
 TotalTempSize<br/>
 
