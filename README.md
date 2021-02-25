@@ -61,19 +61,19 @@ Get-FDI verbose
 ## Some ways to Use with Get-FullDiskInfo in verbose mode ##
 
 ```
-Get-FullDiskInfo verbose | Where-Object VolumeLetter -eq "C:" | Format-List
+Get-FullDiskInfo verbose | Where-Object VolLetter -eq "C:" | Format-List
 ```
 ```
 Get-FullDiskInfo verbose | Where-Object DiskandPartitionNumber -like "*Partition #1*" | Format-List
 ```
 ```
-Get-FullDiskInfo verbose | Select -Property VolumeName, TotalDiskSize, UsedSpacePercentage,FreeSpacePercentage | Format-List
+Get-FullDiskInfo verbose | Select -Property VolName, TotalDiskSize, UsedSpacePercentage,FreeSpacePercentage | Format-List
 ```
 ```
-Get-FullDiskInfo verbose | Where-Object VolumeLetter -eq "C:").FreeSpacePercentage
+Get-FullDiskInfo verbose | Where-Object VolLetter -eq "C:").FreeSpacePercentage
 ```
 ```
-Get-FullDiskInfo verbose | Where-Object VolumeLetter -eq "C:").MediaType 
+Get-FullDiskInfo verbose | Where-Object VolLetter -eq "C:").MediaType 
 ```
 
 ## -Property Names in Verbose Mode ##
