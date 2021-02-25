@@ -44,7 +44,7 @@ Get-FDI
 "Health & Op. Status"<br/>
 "Total Disk Size(Dynamic:GB|PB|MB|etc.)"<br/>
 "Used Space(Dynamic:GB|PB|MB|etc.,%)"<br/>
-"Free Space(Dynamic:GB|PB|MB|etc.,%)" <br/>
+"Free Space(Dynamic:GB|PB|MB|etc.,%)"<br/>
 "Windows Directory Vol."<br/>
 "TotalTempSize(Dynamic:GB|PB|MB|etc.)"<br/>
 
@@ -81,16 +81,16 @@ Get-FullDiskInfo verbose | Where-Object VolumeLetter -eq "C:").MediaType
 DiskModel<br/>
 MediaType<br/>
 DiskandPartitionNumber<br/>
-VolumeLetter  <br/>        
-VolumeName  <br/>         
-FileSystem <br/>          
-Compressed  <br/>         
-HealthStatus  <br/>   
-OperationalStatus <br/>   
+VolumeLetter<br/>        
+VolumeName<br/>         
+FileSystem<br/>          
+Compressed<br/>         
+HealthStatus<br/>   
+OperationalStatus<br/>   
 TotalDiskSize <br/>       
-UsedSpace  <br/>           
-UsedSpacePercentage   <br/>
-FreeSpace   <br/>       
+UsedSpace<br/>           
+UsedSpacePercentage<br/>
+FreeSpace<br/>       
 FreeSpacePercentage<br/>
 WindowsDirectoryVol<br/>
 TotalTempSize<br/>
