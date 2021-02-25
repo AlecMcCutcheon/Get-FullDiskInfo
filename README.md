@@ -1,5 +1,4 @@
-## Get-FullDiskInfo ##
-
+## Get-FullDiskInfo (WIP)##
 Get-FullDiskInfo Consolidates Physical Disk, Partition and Volume Information
 into One easy to Read and manipulate object.
 
@@ -15,6 +14,8 @@ Here's a one liner to grab and run the script:
 ```
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AlecMcCutcheon/Get-FullDiskInfo/main/Get-FullDiskInfo.ps1'))
 ```
+
+Currently working on making it into a PowerShell module..
 
 ## Running Get-FullDiskInfo in Normal mode ##
 
