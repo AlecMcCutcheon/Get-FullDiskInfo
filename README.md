@@ -18,6 +18,7 @@ Get-FullDiskInfo
 
 Get-FDI
 ```
+![alt text](https://github.com/AlecMcCutcheon/Get-FullDiskInfo/blob/main/Screenshot%202021-02-25%20104905.jpg?raw=true)
 
 ## Some ways to Use with Get-FullDiskInfo in Normal mode ## 
 
