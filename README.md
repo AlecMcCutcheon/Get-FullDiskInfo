@@ -56,6 +56,7 @@ Get-FullDiskInfo verbose
 
 Get-FDI verbose
 ```
+![alt text](https://github.com/AlecMcCutcheon/Get-FullDiskInfo/blob/main/Screenshot%202021-02-25%20105459.jpg?raw=true)
 
 ## Some ways to Use with Get-FullDiskInfo in verbose mode ##
 
