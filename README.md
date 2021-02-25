@@ -37,16 +37,16 @@ Get-FDI
 
 ## -Property Names in Normal Mode ##
 
-"Disk(Model,MediaType)"
-"Disk & Partition #"
-"Volume (Letter, Name, FS)"
-"Drive Compression"
-"Health & Op. Status"
-"Total Disk Size(Dynamic:GB|PB|MB|etc.)"
-"Used Space(Dynamic:GB|PB|MB|etc.,%)"
-"Free Space(Dynamic:GB|PB|MB|etc.,%)" 
-"Windows Directory Vol."
-"TotalTempSize(Dynamic:GB|PB|MB|etc.)"
+"Disk(Model,MediaType)"<br/>
+"Disk & Partition #"<br/>
+"Volume (Letter, Name, FS)"<br/>
+"Drive Compression"<br/>
+"Health & Op. Status"<br/>
+"Total Disk Size(Dynamic:GB|PB|MB|etc.)"<br/>
+"Used Space(Dynamic:GB|PB|MB|etc.,%)"<br/>
+"Free Space(Dynamic:GB|PB|MB|etc.,%)" <br/>
+"Windows Directory Vol."<br/>
+"TotalTempSize(Dynamic:GB|PB|MB|etc.)"<br/>
 
 
 ## Running Get-FullDiskInfo in Verbose mode ##
