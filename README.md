@@ -82,18 +82,18 @@ DiskModel<br/>
 MediaType<br/>
 DiskandPartitionNumber<br/>
 VolumeLetter<br/>        
-VolumeName<br/>         
-FileSystem<br/>          
-Compressed<br/>         
-HealthStatus<br/>   
-OperationalStatus<br/>   
-TotalDiskSize <br/>       
-UsedSpace<br/>           
-UsedSpacePercentage<br/>
-FreeSpace<br/>       
-FreeSpacePercentage<br/>
-WindowsDirectoryVol<br/>
-TotalTempSize<br/>
+VolumeName         
+FileSystem         
+Compressed         
+HealthStatus  
+OperationalStatus 
+TotalDiskSize     
+UsedSpace          
+UsedSpacePercentage
+FreeSpace      
+FreeSpacePercentage
+WindowsDirectoryVol
+TotalTempSize
 
 ## How to use the Extra CleanTemp Function ##
 Seems pretty self explanatory but essentially it cleans the temp files from the temp folders that aren't currently in use in windows
