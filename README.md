@@ -11,6 +11,11 @@ Here is a list of all of the places Get-FullDiskInfo Grabs it's data from:
 - Get-PhysicalDisk
 - Get-Volume
 
+Here's a one liner to grab and run the script:
+```
+iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/AlecMcCutcheon/Get-FullDiskInfo/main/Get-FullDiskInfo.ps1'))
+```
+
 ## Running Get-FullDiskInfo in Normal mode ##
 
 ```
