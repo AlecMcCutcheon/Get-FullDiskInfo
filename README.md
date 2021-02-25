@@ -93,5 +93,10 @@ FreeSpacePercentage
 WindowsDirectoryVol
 TotalTempSize
 
+## How to use the Extra CleanTemp Function ##
+Seems pretty self explanatory but essentially it cleans the temp files from the temp folders that aren't currently in use in windows
+```
+CleanTemp
+```
 ## Credits
 Alec McCutcheon created Get-FullDiskInfo to make eveyones life a little bit easier.
