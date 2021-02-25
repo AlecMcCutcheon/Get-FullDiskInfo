@@ -67,10 +67,10 @@ Get-FullDiskInfo verbose | Where-Object VolLetter -eq "C:" | Format-List
 Get-FullDiskInfo verbose | Where-Object DiskandPartitionNumber -like "*Partition #1*" | Format-List
 ```
 ```
-Get-FullDiskInfo verbose | Select -Property VolName, TotalDiskSize, UsedSpacePercentage,FreeSpacePercentage | Format-List
+Get-FullDiskInfo verbose | Select -Property VolName, TotalVolSize, UsedVolSpacePercentage,FreeVolSpacePercentage | Format-List
 ```
 ```
-Get-FullDiskInfo verbose | Where-Object VolLetter -eq "C:").FreeSpacePercentage
+Get-FullDiskInfo verbose | Where-Object VolLetter -eq "C:").FreeVolSpacePercentage
 ```
 ```
 Get-FullDiskInfo verbose | Where-Object VolLetter -eq "C:").MediaType 
