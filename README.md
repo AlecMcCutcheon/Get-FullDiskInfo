@@ -1,4 +1,4 @@
-## Get-FullDiskInfo V.1 (WIP)##
+## Get-FullDiskInfo V.2 ##
 Get-FullDiskInfo Consolidates Physical Disk, Partition and Volume Information
 into One easy to Read and manipulate object.
 
@@ -110,3 +110,5 @@ CleanTemp
 ```
 ## Credits
 Alec McCutcheon created Get-FullDiskInfo to make eveyones life a little bit easier.
+
+Also Big thx to ihaxr on Reddit: https://www.reddit.com/user/ihaxr/ for the help :)
