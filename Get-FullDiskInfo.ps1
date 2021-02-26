@@ -225,7 +225,7 @@ if($Mode -ne "verbose"){
 $uniqueCount = @($disks | Select-Object -Unique "Vol.(Letter,Name,FS)").Count
 
 if ($uniqueCount -eq $disks.Count) {
-  Write-Output $disk
+  Write-Output $disks
 } else {
     $ignored = [System.Collections.Generic.List[string]]::new()
     foreach ($disk in $disks) {
@@ -251,7 +251,7 @@ if ($uniqueCount -eq $disks.Count) {
 $uniqueCount = @($disks | Select-Object -Unique "VolLetter", "VolName", "VolFileSystem").Count
 
 if ($uniqueCount -eq $disks.Count) {
-  Write-Output $disk
+  Write-Output $disks
 } else {
     $ignored = [System.Collections.Generic.List[string]]::new()
     foreach ($disk in $disks) {
