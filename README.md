@@ -46,6 +46,7 @@ Get-FDI
 
 ## -Property Names in Normal Mode ##
 
+"DiskType"<br/>
 "Disk(Model,MediaType)"<br/>
 "Disk & Partition #"<br/>
 "Volume (Letter, Name, FS)"<br/>
@@ -87,6 +88,7 @@ Get-FullDiskInfo verbose | Where-Object VolLetter -eq "C:").MediaType
 
 ## -Property Names in Verbose Mode ##
 
+"DiskType"<br/>
 DiskModel<br/>
 MediaType<br/>
 DiskStyle<br/>
