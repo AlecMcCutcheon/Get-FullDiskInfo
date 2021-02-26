@@ -102,7 +102,7 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 	break
 
 } else {
-$tempfolders = @(“C:\Windows\Temp\*”, “C:\Users\*\Appdata\Local\Temp\*”)
+$tempfolders = @("C:\Windows\Temp\*", "C:\Users\*\Appdata\Local\Temp\*")
 Remove-Item $tempfolders -force -recurse -ErrorAction SilentlyContinue
 Write-Host "Cleaned all Temp Files that are not currently in use. :)" -ForegroundColor Green
 }}
