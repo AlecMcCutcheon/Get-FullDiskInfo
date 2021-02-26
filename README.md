@@ -20,6 +20,8 @@ You will have to do Get-FullDiskInfo, or Get-FDI to actually use it after you ex
 
 Currently working on making it into a PowerShell module..
 
+![alt text](https://github.com/AlecMcCutcheon/Get-FullDiskInfo/blob/main/Preview.jpg?raw=true)
+
 ## Running Get-FullDiskInfo in Normal mode ##
 
 ```
@@ -27,7 +29,6 @@ Get-FullDiskInfo
 
 Get-FDI
 ```
-![alt text](https://github.com/AlecMcCutcheon/Get-FullDiskInfo/blob/main/Screenshot%202021-02-25%20104905.jpg?raw=true)
 
 ## Some ways to Use with Get-FullDiskInfo in Normal mode ## 
 
@@ -66,7 +67,6 @@ Get-FullDiskInfo verbose
 
 Get-FDI verbose
 ```
-![alt text](https://github.com/AlecMcCutcheon/Get-FullDiskInfo/blob/main/Screenshot%202021-02-25%20105459.jpg?raw=true)
 
 ## Some ways to Use with Get-FullDiskInfo in verbose mode ##
 
