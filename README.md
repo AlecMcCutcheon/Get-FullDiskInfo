@@ -2,7 +2,7 @@
 Get-FullDiskInfo Consolidates Physical Disk, Partition and Volume Information
 into One easy to Read and manipulate object.
 
-* With help from ihaxr on reddit was able to add functionality to distinguish raid groups/storage pools from normal disks, and combine them into a single object
+* With help from ihaxr on reddit, added functionality to distinguish raid groups/storage pools from normal disks, and combine them into a single object
 
 Here is a list of all of the places Get-FullDiskInfo Grabs it's data from:
 
