@@ -13,7 +13,7 @@ Here is a list of all of the places Get-FullDiskInfo Grabs it's data from:
 - Get-Volume
 
 
-Here's a link to the latest <a href="https://alecmccutcheon.github.io/Password-Entropy-Calculator/">Releases</a> of the script.
+Here's a link to the latest <a href="https://github.com/AlecMcCutcheon/Get-FullDiskInfo/releases">Releases</a> of the script.
 or Here's a one liner to grab, run and try the script:
 ```
 iex ((New-Object System.Net.WebClient).DownloadString('https://github.com/AlecMcCutcheon/Get-FullDiskInfo/releases'))
