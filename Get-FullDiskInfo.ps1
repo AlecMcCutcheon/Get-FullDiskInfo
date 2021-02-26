@@ -1,4 +1,4 @@
-﻿Param(
+Param(
    [Parameter(Position=1)]
    [string]$Mode
 )
@@ -102,20 +102,12 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
 	break
 
 } else {
-
 $tempfolders = @(“C:\Windows\Temp\*”, “C:\Users\*\Appdata\Local\Temp\*”)
 Remove-Item $tempfolders -force -recurse -ErrorAction SilentlyContinue
 Write-Host "Cleaned all Temp Files that are not currently in use. :)" -ForegroundColor Green
+}}
 
-  }
-}
-
-function Get-FDI ($Mode) {
-	
-	Get-FullDiskInfo($Mode);
-}
-
-function Get-FullDiskInfo ($Mode) {Get-WmiObject Win32_DiskDrive | ForEach-Object {
+function Get-FullDiskInfoRaw ($Mode) {Get-WmiObject Win32_DiskDrive | ForEach-Object {
 
   $disk = $_
   $partitions = "ASSOCIATORS OF " +
@@ -173,14 +165,17 @@ function Get-FullDiskInfo ($Mode) {Get-WmiObject Win32_DiskDrive | ForEach-Objec
 
       if ($DiskStyle -eq "Removable Disk" -AND $MediaType -eq $null) {$MediaType = "UFD"}
 
+      if ($MediaType -like "*HDD*") {$MediaType = "HDD"}
+
       if ($VolumeName -eq "") {$VolumeName = "Unlabled"}
 
       if($Mode -ne "verbose"){
 
         [PSCustomObject]@{
         
-        "Disk(Model,MediaType)" = $disk.Model + ", " + $MediaType
-        "Disk & Partition #"   = $partition.Name
+        "DiskType" = "Normal Disk"
+        "Disk(Model,MediaType)" = "[ " + $disk.Model + ", " + $MediaType + " ]"
+        "Disk & Partition #"   = "[ " + $partition.Name + " ]"
         "Vol.(Letter,Name,FS)" = $_.DeviceID + " , " + $VolumeName + ", " + $_.FileSystem
         "Vol. Health & Op. Status" = $HealthStatus + ", " + $OperationalStatus
         "Vol. Compression" = $Compressed
@@ -194,11 +189,12 @@ function Get-FullDiskInfo ($Mode) {Get-WmiObject Win32_DiskDrive | ForEach-Objec
 
            [PSCustomObject]@{
 
+        "DiskType" = "Normal Disk"
         "DiskModel" = $disk.Model
         "MediaType" = $MediaType
         "DiskStyle" = $DiskStyle
         "PartitionStyle" = $PartitionStyle
-        "DiskandPartitionNumber" = $partition.Name
+        "DiskandPartitionNumber" = "[ " + $partition.Name + " ]"
         "VolLetter" = $_.DeviceID
         "VolName" = $VolumeName
         "VolFileSystem" = $_.FileSystem
@@ -218,4 +214,70 @@ function Get-FullDiskInfo ($Mode) {Get-WmiObject Win32_DiskDrive | ForEach-Objec
       }
     }
   }
+}
+
+function Get-FullDiskInfo ($Mode) {
+
+$disks = Get-FullDiskInforaw($Mode)
+
+if($Mode -ne "verbose"){
+
+$uniqueCount = @($disks | Select-Object -Unique "Vol.(Letter,Name,FS)").Count
+
+if ($uniqueCount -eq $disks.Count) {
+  Write-Output $disk
+} else {
+    $ignored = [System.Collections.Generic.List[string]]::new()
+    foreach ($disk in $disks) {
+        if ($disk."Vol.(Letter,Name,FS)" -notin $ignored) {
+            $return = @(
+                $disks | Where-Object {
+                    $disk.'Vol.(Letter,Name,FS)' -eq $_.'Vol.(Letter,Name,FS)'
+                }
+            )
+         if ($return.Count -gt 1) {
+                $return."Vol.(Letter,Name,FS)" | ForEach-Object { $ignored.Add($_) }
+                $outputObj = $disk
+                $outputObj.'Disk(Model,MediaType)' = $return.'Disk(Model,MediaType)'
+                $outputObj.'Disk & Partition #' = $return.'Disk & Partition #'
+                $outputObj.DiskType = "RAID Group or Storage Pool"
+                Write-Output $outputObj
+            } else {
+                Write-Output $disk
+            }}}}
+
+}else{
+
+$uniqueCount = @($disks | Select-Object -Unique "VolLetter", "VolName", "VolFileSystem").Count
+
+if ($uniqueCount -eq $disks.Count) {
+  Write-Output $disk
+} else {
+    $ignored = [System.Collections.Generic.List[string]]::new()
+    foreach ($disk in $disks) {
+        if ($disk."VolLetter" -notin $ignored) {
+            $return = @(
+                $disks | Where-Object {
+                    $disk.'VolLetter' -eq $_.'VolLetter'
+                }
+            )
+         if ($return.Count -gt 1) {
+                $return."VolLetter" | ForEach-Object { $ignored.Add($_) }
+                $outputObj = $disk
+                $outputObj.'DiskModel' = $return.'DiskModel'
+                $outputObj.'MediaType' = $return.'MediaType'
+                $outputObj.'DiskandPartitionNumber' = $return.'DiskandPartitionNumber'
+                $outputObj.DiskType = "RAID Group or Storage Pool"
+                Write-Output $outputObj
+            } else {
+                Write-Output $disk
+            }}}}
+
+  }
+}
+
+function Get-FDI ($Mode) {
+
+Get-FullDiskInfo ($Mode)
+
 }
