@@ -112,6 +112,7 @@ TotalTempSize<br/>
 
 ## How to use the Extra CleanTemp Function ##
 Seems pretty self explanatory but essentially it cleans the temp files from the temp folders that aren't currently in use in windows
+- Requires Admin permission
 ```
 CleanTemp
 ```
