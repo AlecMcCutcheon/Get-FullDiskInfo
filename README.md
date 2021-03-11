@@ -21,6 +21,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 You will have to do Get-FullDiskInfo, or Get-FDI to actually use it after you execute the one liner
 
 Currently working on making it into a PowerShell module..
+Plz lmk what you would like me to add or feedback on the project.
 
 ![alt text](https://github.com/AlecMcCutcheon/Get-FullDiskInfo/blob/main/Preview.jpg?raw=true)
 
