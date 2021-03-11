@@ -117,6 +117,5 @@ Seems pretty self explanatory but essentially it cleans the temp files from the 
 CleanTemp
 ```
 ## Credits
-Creater: Alec McCutcheon
-Also Big thx to ihaxr on Reddit: https://www.reddit.com/user/ihaxr/ for the help :)
+Creater: Alec McCutcheon, Also Big thx to ihaxr on Reddit: https://www.reddit.com/user/ihaxr/ for the help :)
 - Created Get-FullDiskInfo to make eveyones life a little bit easier.
