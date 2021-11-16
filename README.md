@@ -16,7 +16,7 @@ Here is a list of all of the places Get-FullDiskInfo Grabs it's data from:
 Here's a link to the latest <a href="https://github.com/AlecMcCutcheon/Get-FullDiskInfo/releases">Releases</a> of the Module.
 or Here's a One-Liner you can use to pull the latest version of the module temporarily for your current session.
 ```
-New-Module -Name Convert-SplitNameValue -ScriptBlock ([Scriptblock]::Create(([System.IO.StreamReader]((([System.Net.WebRequest]::CreateHttp("https://gitcdn.link/cdn/AlecMcCutcheon/Get-FullDiskInfo/V.3/Get-FullDiskInfo.psm1")).GetResponse()).GetResponseStream())).ReadToEnd()))
+New-Module -Name Get-FullDiskInfo -ScriptBlock ([Scriptblock]::Create(([System.IO.StreamReader]((([System.Net.WebRequest]::CreateHttp("https://gitcdn.link/cdn/AlecMcCutcheon/Get-FullDiskInfo/V.3/Get-FullDiskInfo.psm1")).GetResponse()).GetResponseStream())).ReadToEnd()))
 ```
 You will have to do Get-FullDiskInfo, or Get-FDI to actually use it after you execute the one liner
 
