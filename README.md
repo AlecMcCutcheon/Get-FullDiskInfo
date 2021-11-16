@@ -1,4 +1,4 @@
-## Get-FullDiskInfo V.2 ##
+## Get-FullDiskInfo V.3 ##
 Get-FullDiskInfo Consolidates Physical Disk, Partition and Volume Information
 into One easy to Read and manipulate object.
 
