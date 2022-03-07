@@ -1,4 +1,10 @@
 ## Get-FullDiskInfo V.3 ##
+
+Note: if you run this module in Pwsh (PowerShell [Core] 6+) you will get an error, This can be fixed by installing the WindowsCompatibility module.
+```
+Install-Module WindowsCompatibility -Scope CurrentUser
+```
+
 Get-FullDiskInfo Consolidates Physical Disk, Partition and Volume Information
 into One easy to Read and manipulate object.
 
