@@ -57,21 +57,21 @@
 
   }
 
-  Get-WmiObject Win32_DiskDrive | ForEach-Object {
+  Get-CimInstance Win32_DiskDrive | ForEach-Object {
 
     $disk = $_
     $partitions = "ASSOCIATORS OF " +
     "{Win32_DiskDrive.DeviceID='$($disk.DeviceID)'} " +
     "WHERE AssocClass = Win32_DiskDriveToDiskPartition"
 
-    Get-WmiObject -Query $partitions | ForEach-Object {
+    Get-CimInstance -Query $partitions | ForEach-Object {
 
       $partition = $_
       $drives = "ASSOCIATORS OF " +
       "{Win32_DiskPartition.DeviceID='$($partition.DeviceID)'} " +
       "WHERE AssocClass = Win32_LogicalDiskToPartition"
 
-      Get-WmiObject -Query $drives | ForEach-Object {
+      Get-CimInstance -Query $drives | ForEach-Object {
 
         $PhysicalDiskScrap = (Get-PhysicalDisk | Where-Object FriendlyName -EQ $disk.Model)
         $GetVolumeScrap = (Get-Volume | Where-Object FileSystemLabel -EQ ($_.VolumeName))
