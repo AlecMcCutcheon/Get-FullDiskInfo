@@ -73,8 +73,8 @@ function Get-FullDiskInfo {
 
       Get-CimInstance -Query $drives -verbose:$false | ForEach-Object {
 
-        $PhysicalDiskScrap = (Get-PhysicalDisk -verbose:$false | Where-Object FriendlyName -EQ $disk.Model)
-        $GetVolumeScrap = (Get-Volume -verbose:$false | Where-Object FileSystemLabel -EQ ($_.VolumeName))
+        $PhysicalDiskScrap = (Get-PhysicalDisk | Where-Object FriendlyName -EQ $disk.Model)
+        $GetVolumeScrap = (Get-Volume | Where-Object FileSystemLabel -EQ ($_.VolumeName))
         $HealthStatus = $GetVolumeScrap.HealthStatus
         $OperationalStatus = $GetVolumeScrap.OperationalStatus
         $MediaType = $PhysicalDiskScrap.MediaType
