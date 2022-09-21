@@ -57,21 +57,21 @@ function Get-FullDiskInfo {
 
   }
 
-  Get-CimInstance Win32_DiskDrive -verbose:$false | ForEach-Object {
+  Get-CimInstance Win32_DiskDrive | ForEach-Object {
 
     $disk = $_
     $partitions = "ASSOCIATORS OF " +
     "{Win32_DiskDrive.DeviceID='$($disk.DeviceID)'} " +
     "WHERE AssocClass = Win32_DiskDriveToDiskPartition"
 
-    Get-CimInstance -Query $partitions -verbose:$false | ForEach-Object {
+    Get-CimInstance -Query $partitions | ForEach-Object {
 
       $partition = $_
       $drives = "ASSOCIATORS OF " +
       "{Win32_DiskPartition.DeviceID='$($partition.DeviceID)'} " +
       "WHERE AssocClass = Win32_LogicalDiskToPartition"
 
-      Get-CimInstance -Query $drives -verbose:$false | ForEach-Object {
+      Get-CimInstance -Query $drives | ForEach-Object {
 
         $PhysicalDiskScrap = (Get-PhysicalDisk | Where-Object FriendlyName -EQ $disk.Model)
         $GetVolumeScrap = (Get-Volume | Where-Object FileSystemLabel -EQ ($_.VolumeName))
